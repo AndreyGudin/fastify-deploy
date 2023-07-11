@@ -50,7 +50,7 @@ export const BoardPage: FC = () => {
     });
 
     getBoardById(boardId!).then((response) => setBoardData(response.data));
-  }, [modal]);
+  }, [modal, boardId, dispatch]);
 
   const onSortEnd = ({ oldIndex, newIndex }: SortableEvent) => {
     editColumn({
@@ -67,7 +67,7 @@ export const BoardPage: FC = () => {
   useEffect(() => {
     const containerHeight = document.querySelector('.columns')?.clientHeight;
     if (containerHeight) dispatch(setMaxHeight(containerHeight));
-  }, [document.querySelector('.columns')?.clientHeight]);
+  }, [document.querySelector('.columns')?.clientHeight,dispatch ]);
 
   return (
     <Container fluid className="flex-fill d-flex flex-column mb-3">
