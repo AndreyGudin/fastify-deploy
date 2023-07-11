@@ -22,6 +22,7 @@ export const BoardPage: FC = () => {
   const boardId = params.boardId;
   const [boardData, setBoardData] = useState<Board>();
   const [columnData, setColumnData] = useState<ColumnData[]>([]);
+  const [containerHeight, setContainerHeight] = useState(document.querySelector('.columns')?.clientHeight);
   const { modal } = useSelector((state: RootState) => state);
 
   useEffect(() => {
@@ -65,9 +66,9 @@ export const BoardPage: FC = () => {
   };
 
   useEffect(() => {
-    const containerHeight = document.querySelector('.columns')?.clientHeight;
+    setContainerHeight(document.querySelector('.columns')?.clientHeight);
     if (containerHeight) dispatch(setMaxHeight(containerHeight));
-  }, [document.querySelector('.columns')?.clientHeight, dispatch]);
+  }, [containerHeight, dispatch]);
 
   return (
     <Container fluid className="flex-fill d-flex flex-column mb-3">
