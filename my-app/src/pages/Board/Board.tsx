@@ -22,7 +22,9 @@ export const BoardPage: FC = () => {
   const boardId = params.boardId;
   const [boardData, setBoardData] = useState<Board>();
   const [columnData, setColumnData] = useState<ColumnData[]>([]);
-  const [containerHeight, setContainerHeight] = useState(document.querySelector('.columns')?.clientHeight);
+  const [containerHeight, setContainerHeight] = useState(
+    document.querySelector('.columns')?.clientHeight
+  );
   const { modal } = useSelector((state: RootState) => state);
 
   useEffect(() => {
