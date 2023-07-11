@@ -67,7 +67,7 @@ export const BoardPage: FC = () => {
   useEffect(() => {
     const containerHeight = document.querySelector('.columns')?.clientHeight;
     if (containerHeight) dispatch(setMaxHeight(containerHeight));
-  }, [document.querySelector('.columns')?.clientHeight,dispatch ]);
+  }, [document.querySelector('.columns')?.clientHeight, dispatch ]);
 
   return (
     <Container fluid className="flex-fill d-flex flex-column mb-3">

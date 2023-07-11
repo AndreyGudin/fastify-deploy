@@ -36,7 +36,7 @@ export const Dashboard: FC = () => {
       const current = response.data.find((user) => user.login === login);
       if (current) dispatch(currentUser(current));
     });
-  }, [modal, dispatch,login]);
+  }, [modal, dispatch, login]);
 
   return (
     <Container fluid className="flex-fill overflow-auto">
